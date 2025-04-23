@@ -236,6 +236,30 @@ export default function ClientAnimatedSection({ children, animationType }: Clien
             }
           )
         })
+      } else if (animationType === 'form') {
+        gsap.fromTo(
+          '[data-animate="section-form"]',
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: '[data-animate="section-form"]', start: 'top 90%' },
+          }
+        )
+      } else if (animationType === 'details') {
+        gsap.fromTo(
+          '[data-animate="section-details"]',
+          { opacity: 0, y: 20 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.6,
+            ease: 'power2.out',
+            scrollTrigger: { trigger: '[data-animate="section-details"]', start: 'top 90%' },
+          }
+        )
       } else if (animationType === 'cta') {
         gsap.fromTo(
           '[data-animate="section-title"]',

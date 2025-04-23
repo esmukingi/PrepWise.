@@ -46,7 +46,9 @@ const page = async () => {
   ]
 
   return (
-    <div className="min-h-screen">
+    <div
+      className="min-h-screen "
+    >
       {/* Hero Section */}
       <ClientAnimatedSection animationType="hero">
         <section className="relative overflow-hidden py-20 px-4 sm:px-6 lg:px-8">
@@ -56,15 +58,18 @@ const page = async () => {
                 <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight">
                   Master Your Interviews with AI-Powered Practice
                 </h1>
-                <p className="text-lg text-gray-600">
+                <p className="text-lg text-gray-200">
                   Hone your skills with real interview questions, get instant AI-driven feedback, and land your dream job.
                 </p>
-                <div className="flex gap-4">
-                  <Button asChild className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg">
+                <div className="flex flex-wrap gap-4">
+                  <Button asChild className="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-6 rounded-lg">
                     <Link href="/interview">Start Practicing Now</Link>
                   </Button>
-                  <Button asChild variant="outline" className="border-indigo-600 text-indigo-600 hover:bg-indigo-50 font-semibold py-3 px-6 rounded-lg">
+                  <Button asChild variant="outline" className="border-indigo-400 text-indigo-200 hover:bg-indigo-900/50 font-semibold py-3 px-6 rounded-lg">
                     <Link href="/learn-more">Learn More</Link>
+                  </Button>
+                  <Button asChild variant="outline" className="border-indigo-400 text-indigo-200 hover:bg-indigo-900/50 font-semibold py-3 px-6 rounded-lg" data-animate="cta-button">
+                    <Link href="/contact">Contact Support</Link>
                   </Button>
                 </div>
               </div>
@@ -76,7 +81,7 @@ const page = async () => {
                   height={500}
                   className="relative z-10"
                 />
-                <div className="absolute inset-0 bg-indigo-200 rounded-full blur-3xl opacity-50 -z-10" />
+                <div className="absolute inset-0 bg-indigo-900/30 rounded-full blur-3xl opacity-50 -z-10" />
               </div>
             </div>
           </div>
@@ -85,7 +90,7 @@ const page = async () => {
 
       {/* Stats Section */}
       <ClientAnimatedSection animationType="stats">
-        <section className="py-16 ">
+        <section className="py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
               {stats.map((stat, index) => (
@@ -94,9 +99,9 @@ const page = async () => {
                   className="flex flex-col items-center"
                   data-animate={`stat-${index}`}
                 >
-                  <stat.icon className="h-12 w-12 text-indigo-600 mb-4" />
+                  <stat.icon className="h-12 w-12 text-indigo-400 mb-4" />
                   <h3 className="text-3xl font-bold text-white">{stat.value}</h3>
-                  <p className="text-gray-600">{stat.label}</p>
+                  <p className="text-gray-200">{stat.label}</p>
                 </div>
               ))}
             </div>
@@ -119,9 +124,9 @@ const page = async () => {
                   </div>
                 ))
               ) : (
-                <div className="col-span-full text-center py-12  rounded-lg shadow-sm" data-animate="no-interviews">
-                  <p className="text-gray-600 text-lg">You haven&apos;t taken any interviews yet.</p>
-                  <Button asChild className="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white">
+                <div className="col-span-full text-center py-12 bg-gray-900/80 rounded-lg shadow-sm" data-animate="no-interviews">
+                  <p className="text-gray-200 text-lg">You haven't taken any interviews yet.</p>
+                  <Button asChild className="mt-4 bg-indigo-600 hover:bg-indigo-500 text-white">
                     <Link href="/interview">Start Your First Interview</Link>
                   </Button>
                 </div>
@@ -146,9 +151,9 @@ const page = async () => {
                   </div>
                 ))
               ) : (
-                <div className="col-span-full text-center py-12  rounded-lg shadow-sm" data-animate="no-interviews">
-                  <p className="text-white text-lg">No upcoming interviews available.</p>
-                  <Button asChild className="mt-4 bg-indigo-600 hover:bg-indigo-700 text-white">
+                <div className="col-span-full text-center py-12 bg-gray-900/80 rounded-lg shadow-sm" data-animate="no-interviews">
+                  <p className="text-gray-200 text-lg">No upcoming interviews available.</p>
+                  <Button asChild className="mt-4 bg-indigo-600 hover:bg-indigo-500 text-white">
                     <Link href="/interview">Schedule an Interview</Link>
                   </Button>
                 </div>
@@ -160,7 +165,7 @@ const page = async () => {
 
       {/* Testimonials Section */}
       <ClientAnimatedSection animationType="testimonials">
-        <section className="py-16  text-white">
+        <section className="py-16 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-3xl font-bold text-center mb-12" data-animate="section-title">
               What Our Users Say
@@ -169,7 +174,7 @@ const page = async () => {
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="card card-border bg-gray-700 text-white p-6 rounded-lg shadow-lg"
+                  className="bg-gray-900/80 border border-gray-700 text-white p-6 rounded-lg shadow-lg"
                   data-animate={`testimonial-${index}`}
                 >
                   <div className="flex mb-4">
@@ -177,12 +182,12 @@ const page = async () => {
                       <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-4">&quot;{testimonial.quote}&quot;</p>
+                  <p className="text-gray-300 mb-4">"{testimonial.quote}"</p>
                   <div className="flex items-center">
-                    <div className="h-10 w-10 bg-indigo-200 rounded-full mr-4" />
+                    <div className="h-10 w-10 bg-indigo-400/50 rounded-full mr-4" />
                     <div>
-                      <p className="font-semibold">{testimonial.name}</p>
-                      <p className="text-sm text-gray-500">{testimonial.role}</p>
+                      <p className="font-semibold text-white">{testimonial.name}</p>
+                      <p className="text-sm text-gray-400">{testimonial.role}</p>
                     </div>
                   </div>
                 </div>
@@ -194,17 +199,17 @@ const page = async () => {
 
       {/* CTA Section */}
       <ClientAnimatedSection animationType="cta">
-        <section className="card py-16 px-4 sm:px-6 lg:px-8">
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-4" data-animate="section-title">
               Ready to Ace Your Next Interview?
             </h2>
-            <p className="text-lg text-gray-600 mb-8" data-animate="section-text">
+            <p className="text-lg text-gray-200 mb-8" data-animate="section-text">
               Join thousands of professionals who have transformed their interview skills with our AI-powered platform.
             </p>
             <Button
               asChild
-              className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg"
+              className="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-8 rounded-lg z-10"
               data-animate="cta-button"
             >
               <Link href="/interview">
