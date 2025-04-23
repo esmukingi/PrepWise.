@@ -32,10 +32,10 @@ export default function ClientAnimatedSection({ children, animationType }: Clien
       const { gsap, ScrollTrigger } = window as any
       gsap.registerPlugin(ScrollTrigger)
 
-      // Fallback styles
+    
       gsap.set('[data-animate="cta-button"]', { opacity: 1, scale: 1 })
 
-      // Animation configurations
+      
       if (animationType === 'hero') {
         gsap.fromTo(
           '[data-animate="hero-text"]',
@@ -45,7 +45,7 @@ export default function ClientAnimatedSection({ children, animationType }: Clien
         gsap.fromTo(
           '[data-animate="hero-image"]',
           { opacity: 0, scale: 0.8 },
-          { opacity: 1, scale: 1, duration: 0.8, delay: 0.2, ease: 'power2.out' }
+          { opacity: 1, scale: 1, duration: 0.8, delay: 0.2, ease: 'elastic' }
         )
       } else if (animationType === 'stats') {
         document.querySelectorAll('[data-animate^="stat-"]').forEach((el, index) => {
