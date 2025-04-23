@@ -10,7 +10,7 @@ import Image from 'next/image'
 const ContactPage = () => {
   const myDetails = {
     name: 'NGOBOKA Alain Beni',
-    email: 'ngobokaben.com',
+    email: 'ngobokaben@gmail.com',
     github: 'esmukingi',
     facebook: 'Nii Beni AEG',
     skills: ['React', 'Next.js', 'TypeScript', 'Node.js', 'Tailwind CSS', 'Express', 'PHP', 'Vue', 'UX/UI designer', 'Project Manager', 'Version control', 'firebase', 'Javascript'],
